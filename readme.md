@@ -57,6 +57,14 @@ So doing that just execute below in your project directory
 npm run watch
 ```
 
+```
+Run migration file after creating database
+php artisan migrate
+
+If cannot detect the database run
+php artisan config:cache
+```
+
 ### Visit
 ```
 http://localhost
