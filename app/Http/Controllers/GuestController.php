@@ -36,4 +36,25 @@ class GuestController extends Controller
 
         return response(null, Response::HTTP_OK);
     }
+
+    public function getBookings()
+    {
+        $bookings = $this->guestService->getBookings();
+        
+        return response()->json($bookings);
+    }
+
+    public function delete($id)
+    {
+        $this->guestService->deleteBooking($id);
+
+        return response(null, Response::HTTP_OK);
+    }
+
+    public function submitUpdate(Request $request)
+    {
+        $this->guestService->updateGuest($request->all());
+
+        return response(null, Response::HTTP_OK);
+    }
 }

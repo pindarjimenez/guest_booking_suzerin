@@ -13,12 +13,12 @@
 
 Route::get('/', 'GuestController@index');
 
+Route::get('/get-bookings', 'GuestController@getBookings');
+
 Route::get('/create', 'GuestController@create');
 
 Route::post('/create', 'GuestController@submitCreate');
 
-Route::get('/edit/{id}', 'GuestController@edit');
+Route::post('/update', 'GuestController@submitUpdate');
 
-Route::post('/edit/{id}', 'GuestController@submitEdit');
-
-Route::get('/detail/{id}', 'GuestController@detail');
+Route::delete('/booking/{id}', 'GuestController@delete');

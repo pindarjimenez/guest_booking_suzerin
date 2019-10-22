@@ -21,8 +21,6 @@ window.Vue = require('vue');
 
 Vue.component('guest-list', require('./components/guest/ListComponent.vue').default);
 Vue.component('create-guest', require('./components/guest/CreateComponent.vue').default);
-Vue.component('edit-guest', require('./components/guest/EditComponent.vue').default);
-Vue.component('guest-detail', require('./components/guest/DetailComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

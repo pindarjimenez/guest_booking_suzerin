@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8  my-5">
+            <div class="col-md-8 my-3">
                 <div class="card">
                     <div class="card-header">Create Guest</div>
 
@@ -43,8 +43,9 @@
                                     <div class="form-group">
                                         <input type="text" v-model="address" class="form-control" placeholder="Address">
                                     </div>
-                                    <div class="text-center ">
-                                        <button @click="formSubmit" class=" btn btn-primary">Create Booking</button>
+                                    <div>
+                                        <a class="btn btn-primary float-left" href="/" role="button">Return</a>
+                                        <button @click="formSubmit" class="btn btn-success float-right" :disabled="!isComplete">Submit Booking</button>
                                     </div>
                                 </form>
                             </div>
@@ -71,7 +72,6 @@
         },
         methods: {
             formSubmit(e) {
-
                  axios.post('/create', {
                     first_name: this.first_name,
                     last_name: this.last_name,
@@ -91,6 +91,11 @@
                 .catch(err => console.log(err));
 
                 e.preventDefault();
+            }
+        },
+        computed: {
+            isComplete () {
+                return this.first_name && this.last_name && this.email && this.phone && this.address;
             }
         }
     }
